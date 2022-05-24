@@ -1,16 +1,16 @@
 {
 
-  "manifest_version": 1,
+  "manifest_version": 2,
   "name": "Calcrypto",
   "version": "1.0",
 
-  "description": "A firefox extension to calculate prices within cryptocurrency and fiat currency",
+  "description": "A firefox extension to calculate prices within cryptocurrency and fiat currency.",
 
   "icons": {
     "48": "icons/icon.jpg"
   },
 
-  "sidebar_action": {
+  "browser_action": {
     "default_icon": "icons/icon.jpg",
     "default_title" : "Calcrypto",
     "default_popup": "popup/main_popup.html"
