@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main_popup.css"/>
+</head>
+
+<body>
+  </div>
+
+  <div id="popup-content">
+    <div class="title-bar">
+      <div id="title" class="title">CryptoConvert</div>
+      <a href="#" id="a_refresh" class="a_refresh pre-animate-back">Refresh</a>
+    </div>
+    <div id="control-container" class="control-container">
+      <div id="currency first-c" class="currency">
+        <input class="form-control first" id="txtAmount" name="amount-first" min="0" placeholder="0" step="0.01" type="number">
+        <select class="dropdown first" id="first_currency">
+          <optgroup id="first_recent" label="Recent"></optgroup>
+          <optgroup id="first_fiat" label="Fiat"></optgroup>
+            <option value="USD" >USD</option>
+          <optgroup id="first_top" label="Crypto"></optgroup>
+            <option value="BTC" >BTC</option>
+        </select>
+      </div>
+      <div id="currency second-c" class="currency">
+        <input class="form-control second" id="second_input" readonly>
+        <select class="dropdown second" id="second_currency">
+          <optgroup id="second_recent" label="Recent"></optgroup>
+          <optgroup id="second_fiat" label="Fiat"></optgroup>
+            <option value="USD" >USD</option>
+          <optgroup id="second_top" label="Top 250"></optgroup>
+          <option value="BTC" >BTC</option>
+        </select>
+      </div>
+    </div>
+
+    <br/> <button id="btnConvert">Convert</button>
+
+    <br/>
+    <br/>
+
+    <div class="title">Conversion</div>
+    <br/>
+    <label><textarea id="txtConversion" rows="1" cols="40"></textarea></label>
+    <br/><br/>
+
+  </div>
+
+  <script src="../calcrypto.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+/*
+  Color Variables 
+*/
+:root
+{
+  --title-col: white;
+  
+  --popup-bg-col: rgb(37, 70, 146);
+
+  --a-refresh-col: rgba(255, 255, 255, 0.555);
+  --a-refresh-alpha: 0.555;
+  
+  --dropdown-button-bg-col: rgb(14, 39, 96);
+  --dropdown-button-text-col: rgb(255, 235, 227);
+
+  --optgroup-bg-col: rgb(26, 54, 118);
+  --optgroup-text-col: rgb(255, 235, 227);
+
+  --option-bg-col: rgb(58, 88, 156);
+  --option-text-col: rgb(255, 235, 227);
+}
+
+html, body
+{
+    padding: 0.225em;
+    background-color: var(--popup-bg-col);
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.popup-container
+{
+  display: block;
+  align-content: center;
+}
+
+.title-bar
+{
+  display: block;
+}
+
+ @-webkit-keyframes flip {
+  0% {
+    -webkit-transform: rotateX(0) scaleY(1);
+            transform: rotateX(0) scaleY(1);
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg) scaleY(0);
+            transform: rotateX(-90deg) scaleY(0);
+  }
+}
+@keyframes flip {
+  0% {
+    -webkit-transform: rotateX(0) scaleY(1);
+            transform: rotateX(0) scaleY(1);
+            opacity: var(--a-refresh-alpha);
+  }
+  100% {
+    -webkit-transform: rotateX(-90deg) scaleY(0);
+            transform: rotateX(-90deg) scaleY(0);
+            opacity: 0;
+  }
+}
+@keyframes unflip {
+  0% {
+    -webkit-transform: rotateX(-90deg) scaleY(0);
+            transform: rotateX(-90deg) scaleY(0);
+            opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg) scaleY(1);
+            transform: rotateX(0deg) scaleY(1);
+            opacity: var(--a-refresh-alpha);
+  }
+}
+
+.title-bar a
+{
+  font-size: 0.8em;
+  float: right;
+  margin-top: 0.2em;
+  text-decoration: none;
+  color: var(--a-refresh-col);
+  transform: scaleY(0) rotateX(180deg);
+}
+
+a.animate
+{
+  -webkit-animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+a.animate-back
+{
+  -webkit-animation: unflip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: unflip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+a.pre-animate-back
+{
+  -webkit-animation: unflip 0.8s 12s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: unflip 0.8s 12s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+.title
+{
+  display: inline-block;
+  color:var(--title-col);
+  margin-bottom: 0.2em;
+}
+
+.currency
+{
+  display: flex;
+}
+
+input.form-control, .dropdown
+{
+  outline: none;
+  display: inline-block;
+  overflow: hidden;
+  margin: 2px;
+}
+input.form-control:hover
+{
+  box-shadow: -12px 12px 20px -12px rgba(0, 0, 0, 0.45);
+}
+
+select.dropdown
+{
+  text-align: center;
+  border: none;
+  height: 2.15em;
+  width: 4.8em;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--dropdown-button-bg-col);
+  color: var(--dropdown-button-text-col);
+}
+select:hover
+{
+  box-shadow: 12px 12px 20px -12px rgba(0, 0, 0, 0.45);
+}
+
+optgroup
+{
+  display: block;
+  text-align: left;
+  border: none;
+  width: 4.8em;
+  text-decoration: none;
+  background-color: var(--optgroup-bg-col);
+  color: var(--optgroup-text-col);
+}
+
+option
+{
+  display: block;
+  text-align: center;
+  padding: 0.275em;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--option-bg-col);
+  color: var(--option-text-col);
+}
+
+input.form-control {
+  text-align: right;
+  height: 2em;
+  width: 12em;
+  border: none;
+}
+
+input.form-control:focus {
+  outline: 0;
+}
+
+.hidden
+{
+  display: none;
+}
