@@ -12,35 +12,36 @@
   <div id="popup-content">
     <div class="title-bar">
       <div id="title" class="title">CryptoConvert</div>
-      <a href="#" id="a_refresh" class="a_refresh pre-animate-back">Refresh</a>
+      <!-- <a href="#" id="a_refresh" class="a_refresh pre-animate-back">Refresh</a> -->
     </div>
     <div id="control-container" class="control-container">
       <div id="currency first-c" class="currency">
-        <input class="form-control first" id="txtAmount" name="amount-first" min="0" placeholder="0" step="0.01" type="number">
-        <select class="dropdown first" id="first_currency">
-          <optgroup id="first_recent" label="Recent"></optgroup>
-          <optgroup id="first_fiat" label="Fiat"></optgroup>
+        <input class="form-control first" id="input-amount" min="0" placeholder="0" step="0.001" type="number">
+        <select class="dropdown first" id="input-currency">
+          <optgroup id="input-recent" label="Recent"></optgroup>
+          <optgroup id="input-fiat" label="Fiat"></optgroup>
             <option value="USD" >USD</option>
-          <optgroup id="first_top" label="Crypto"></optgroup>
+            <option value="MYR" >MYR</option>
+          <optgroup id="input-crypto" label="Crypto"></optgroup>
             <option value="BTC" >BTC</option>
+            <option value="ETH" >ETH</option>
         </select>
       </div>
       <div id="currency second-c" class="currency">
-        <input class="form-control second" id="second_input" readonly>
-        <select class="dropdown second" id="second_currency">
-          <optgroup id="second_recent" label="Recent"></optgroup>
-          <optgroup id="second_fiat" label="Fiat"></optgroup>
+        <input class="form-control second" id="output-amount" readonly>
+        <select class="dropdown second" id="output-currency">
+          <optgroup id="output-recent" label="Recent"></optgroup>
+          <optgroup id="output-fiat" label="Fiat"></optgroup>
             <option value="USD" >USD</option>
-          <optgroup id="second_top" label="Top 250"></optgroup>
+            <option value="MYR" >MYR</option>
+          <optgroup id="output-crypto" label="Crypto"></optgroup>
           <option value="BTC" >BTC</option>
+          <option value="ETH" >ETH</option>
         </select>
       </div>
     </div>
 
     <br/> <button id="btnConvert">Convert</button>
-
-    <br/>
-    <br/>
 
   </div>
 

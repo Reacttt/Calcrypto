@@ -1,39 +1,20 @@
-//Initialize variables
-//On-Click for Generate Button
 document.getElementById("btnConvert").onclick = function() {
-    var first_currency = firstCurrency();
-    var second_currency = secondCurrency();
-    calculateConversion(first_currency, second_currency)
+    const base = document.getElementById('input-currency').value;
+    fetch(`https://api.exchangerate.host/latest?/source=ecb&base=${base}`)
+        .then((response) => response.json())
+        .then((data) => {
+            // console.log(data)
+            const amount = document.getElementById("input-amount").value;
+            const currencyTo = document.getElementById('output-currency').value;
+            const rate = data.rates[currencyTo];
+            function convert(){
+                return amount * rate;
+            }
+            document.getElementById("output-amount").value = convert();
+        })
+        .catch((error) =>{
+            console.log("Error: ", error);
+        });
+
+    return false;
 };
-
-function firstCurrency() {
-    var select = document.getElementById("first_currency");
-    var value = select.options[select.selectedIndex].value;
-
-    return value;
-}
-
-function secondCurrency() {
-    var select = document.getElementById("second_currency");
-    var value = select.options[select.selectedIndex].value;
-
-    return value;
-}
-
-function calculateConversion(fCurrency, sCurrency) {
-    var amount = document.getElementById("txtAmount").value;
-
-    switch (fCurrency) {
-        case "BTC":
-            //Harvard References
-            document.getElementById("second_input").value =
-                amount * 1000;
-            break;
-
-        case "USD":
-            //Wikipedia References
-            document.getElementById("second_input").value =
-                amount / 1000;
-            break;
-    }
-}
