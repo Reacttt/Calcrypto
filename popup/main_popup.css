@@ -83,22 +83,6 @@ html, body
   transform: scaleY(0) rotateX(180deg);
 }
 
-a.animate
-{
-  -webkit-animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: flip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-a.animate-back
-{
-  -webkit-animation: unflip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: unflip 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-a.pre-animate-back
-{
-  -webkit-animation: unflip 0.8s 12s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	        animation: unflip 0.8s 12s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
-
 .title
 {
   display: inline-block;
@@ -177,3 +161,4 @@ input.form-control:focus {
 {
   display: none;
 }
+
