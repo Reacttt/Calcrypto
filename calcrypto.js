@@ -1,27 +1,29 @@
 const key = "53C9B0CF-E34D-4EFC-8079-6A9A259ABA2F";
 const fiatCurrency = ["USD", "AUD", "CNY", "EUR", "GBP", "JPY", "MYR", "SGD"];
 const CryptoCurrency = ["ADA", "AXS", "BNB", "BTC", "DOGE", "ETH", "SHIB", "SLP", "SOL", "XRP"];
-const recentInputCurrency = [];
-const recentOutputCurrency = [];
+var recentInputCurrency = [];
+var recentOutputCurrency = [];
 
 document.addEventListener("DOMContentLoaded", ()=>{
     var inputFiatList = document.getElementById("input-fiat");
     var outputFiatList = document.getElementById("output-fiat");
+    var inputCryptoList = document.getElementById("input-crypto");
+    var outputCryptoList = document.getElementById("output-crypto");
 
+    // Initialize Fiat List
     fiatCurrency.forEach(element => {
         inputFiatList.innerHTML += "<option value=" + element + ">" + element + "</option>";
         outputFiatList.innerHTML += "<option value=" + element + ">" + element + "</option>";
     });
-});
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    var inputCryptoList = document.getElementById("input-crypto");
-    var outputCryptoList = document.getElementById("output-crypto");
-
+    // Initialize Crypto List
     CryptoCurrency.forEach(element => {
         inputCryptoList.innerHTML += "<option value=" + element + ">" + element + "</option>";
         outputCryptoList.innerHTML += "<option value=" + element + ">" + element + "</option>";
     });
+
+    retrieveRecentList();
+    updateRecent();
 });
 
 function updateRecent() {
@@ -76,6 +78,7 @@ document.getElementById("btnConvert").onclick = function() {
             }
 
             updateRecent();
+            storeRecentList();
         })
         .catch((error) =>{
             console.log("Error: ", error);
@@ -83,3 +86,26 @@ document.getElementById("btnConvert").onclick = function() {
 
     return false;
 };
+
+function storeRecentList() {
+// Check browser support
+    if (typeof(Storage) !== "undefined") {
+
+        localStorage.setItem('recentInput', JSON.stringify(recentInputCurrency));
+        localStorage.setItem('recentOutput', JSON.stringify(recentOutputCurrency));
+
+    } else {
+        document.getElementById("console").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+}
+
+function retrieveRecentList() {
+        if (typeof(Storage) !== "undefined") {
+
+            recentInputCurrency = JSON.parse(localStorage.getItem('recentInput'));
+            recentOutputCurrency = JSON.parse(localStorage.getItem('recentOutput'));
+    
+        } else {
+            document.getElementById("console").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    }
