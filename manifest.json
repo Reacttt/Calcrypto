@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "Calcrypto",
-  "version": "1.0.5-Beta",
+  "version": "1.0.4",
 
   "description": "A firefox extension to calculate prices within cryptocurrency and fiat currency.",
 
