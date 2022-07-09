@@ -56,8 +56,7 @@ document.getElementById("btnConvert").onclick = function() {
             function convert(){
                 return amount * rate;
             }
-            // document.getElementById("output-amount").value = convert();
-            document.getElementById("output-amount").value = "Test";
+            document.getElementById("output-amount").value = convert();
 
             if (recentInputCurrency.length === 0) {
                 recentInputCurrency.push(inputCurrency);
