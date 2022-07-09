@@ -1,5 +1,4 @@
-// const key = "53C9B0CF-E34D-4EFC-8079-6A9A259ABA2F";
-const key = "0";
+const key = "53C9B0CF-E34D-4EFC-8079-6A9A259ABA2F";
 const fiatCurrency = ["USD", "AUD", "CNY", "EUR", "GBP", "JPY", "MYR", "SGD"];
 const CryptoCurrency = ["ADA", "AXS", "BNB", "BTC", "DOGE", "ETH", "SHIB", "SLP", "SOL", "XRP"];
 const recentInputCurrency = [];
